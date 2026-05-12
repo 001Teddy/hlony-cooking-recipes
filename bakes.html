@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bakes - Hlony's Cooking Recipes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-image: url('Scott background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #1a2332;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar - Blue Theme */
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a1628 0%, #15355a 50%, #1a3d6e 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        .navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar li a:hover:not(.active) {
+            background-color: #5b9bd5;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .navbar .active {
+            background-color: #2d5f8a;
+            color: white;
+            border-bottom: 3px solid #7ab8e8;
+        }
+
+        /* Main Content Container */
+        .content-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #0a1628 0%, #15355a 50%, #1a3d6e 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 20, 50, 0.2);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        /* Recipe Card */
+        .recipe-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0, 20, 50, 0.08);
+            border: 1px solid #e8f0ff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 20, 50, 0.15);
+        }
+
+        .recipe-card h2, .recipe-card h3 {
+            color: #0a1628;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2d5f8a;
+        }
+
+        .recipe-card h4 {
+            color: #1a3d6e;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .recipe-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .recipe-image img {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 20, 50, 0.2);
+            border: 3px solid #cfe0ff;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .ingredients-section {
+            background: #f5f8ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #2d5f8a;
+        }
+
+        .ingredients-section p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #2c485e;
+        }
+
+        .procedures-section {
+            background: #fafcff;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #5b9bd5;
+        }
+
+        .procedures-section p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #2c485e;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #1a3d6e, #2d5f8a);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, #2d5f8a, #5b9bd5);
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #cfe0ff;
+            color: #3d546f;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 700px) {
+            .navbar li {
+                float: none;
+            }
+            
+            .navbar li a {
+                text-align: left;
+                padding: 12px 16px;
+            }
+            
+            .content-container {
+                margin: 15px;
+                padding: 20px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Italian foods.html">Italian Foods</a></li>
+        <li><a href="Salads.html">Salads</a></li>
+        <li><a href="Cookies.html">Cookies</a></li>
+        <li><a class="active" href="Bakes.html">Bakes</a></li>
+        <li><a href="Contacts.html">Contacts</a></li>
+  
+    </ul>
+
+    <!-- Main Content -->
+    <div class="content-container">
+        
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>🍞 BAKES</h1>
+        </div>
+
+        <!-- Recipe 1: Classic White Bread -->
+        <div class="recipe-card">
+            <h2>🍞 Classic White Bread</h2>
+            
+            <div class="recipe-image">
+                <img src="whitebread.jpg" width="300" height="300" alt="Classic White Bread">
+            </div>
+            
+            <div class="ingredients-section">
+                <h3>Ingredients</h3>
+                <p>
+                    2 1/4 tsp dry yeast<br>
+                    1 1/2 cups warm water<br>
+                    2 tbsp sugar<br>
+                    1 tbsp salt<br>
+                    2 tbsp unsalted butter, softened<br>
+                    4 cups all-purpose flour
+                </p>
+            </div>
+            
+            <div class="procedures-section">
+                <h3>Procedures</h3>
+                <p>
+                    Dissolve yeast in warm water with sugar. Let it sit for 5 minutes until foamy.<br><br>
+                    Add salt, butter, and half the flour and mix well.<br><br>
+                    Gradually add the remaining flour and knead for 8-10 minutes until the dough is smooth and elastic.<br><br>
+                    Place the dough in a greased bowl, cover, and let it rise for 1 hour or until doubled in size.<br><br>
+                    Punch down the dough, shape into a loaf, and place in a greased loaf pan.<br><br>
+                    Cover and let it rise for another 30-45 minutes.<br><br>
+                    Preheat oven to 190 degree celsius and bake for 25-30 minutes until golden brown.
+                </p>
+            </div>
+        </div>
+
+        <!-- Recipe 2: Whole Wheat Bread -->
+        <div class="recipe-card">
+            <h3>🌾 Whole Wheat Bread</h3>
+            
+            <div class="recipe-image">
+                <img src="wheatbread.jpg" width="300" height="300" alt="Whole Wheat Bread">
+            </div>
+            
+            <div class="ingredients-section">
+                <h4>Ingredients</h4>
+                <p>
+                    2 1/4 tsp active yeast<br>
+                    1 3/4 cup warm water<br>
+                    1 tbsp honey<br>
+                    2 tbsp olive oil<br>
+                    2 cups whole wheat flour<br>
+                    1 1/2 cups all-purpose flour<br>
+                    1 1/2 tsp salt
+                </p>
+            </div>
+            
+            <div class="procedures-section">
+                <h4>Procedures</h4>
+                <p>
+                    Dissolve yeast in warm water with honey. Let it sit for 5 minutes.<br><br>
+                    Add olive oil, whole wheat flour, and salt. Stir until combined.<br><br>
+                    Add all-purpose flour gradually, kneading for 8-10 minutes until the dough is smooth.<br><br>
+                    Place the dough in a greased bowl, cover, and let it rise for 1 hour.<br><br>
+                    Punch down the dough and shape it into a loaf.<br><br>
+                    Let the dough rise in a greased loaf pan for 30-45 minutes.<br><br>
+                    Preheat oven to 190 degree celsius and bake for 30-45 minutes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Recipe 3: Cheesy Garlic Bread -->
+        <div class="recipe-card">
+            <h2>🧄 Cheesy Garlic Bread</h2>
+            
+            <div class="recipe-image">
+                <img src="garlic- bread.jpg" width="300" height="300" alt="Cheesy Garlic Bread">
+            </div>
+            
+            <div class="ingredients-section">
+                <h3>Ingredients</h3>
+                <p>
+                    3 cups all-purpose flour<br>
+                    1 tbsp sugar<br>
+                    2 1/4 tsp active dry yeast<br>
+                    1 tsp salt<br>
+                    3/4 cup warm milk<br>
+                    1 tbsp olive oil<br>
+                    1 cup shredded cheese (cheddar or mozzarella)<br>
+                    3 cloves garlic, minced<br>
+                    1 tbsp dried parsley
+                </p>
+            </div>
+            
+            <div class="procedures-section">
+                <h3>Procedures</h3>
+                <p>
+                    Dissolve yeast and sugar in warm milk. Let it sit for 5 minutes.<br><br>
+                    Add salt, olive oil, half the flour. Stir until combined.<br><br>
+                    Gradually add the remaining flour and knead until smooth.<br><br>
+                    Fold in cheese, garlic, and parsley. Knead until evenly distributed.<br><br>
+                    Place the dough in a greased bowl, cover, and let it rise for 1 hour.<br><br>
+                    Shape the dough into a loaf and place it in a greased pan.<br><br>
+                    Let the dough rise for another 30 minutes, then bake at 190 degree celsius for 25-30 minutes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Navigation Link to Homepage -->
+        <center>
+            <a href="index.html" class="back-link">🏠 Back to Homepage</a>
+        </center>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Hlony's Cooking Recipes by Chef Mahlony | Maseru, Lesotho</p>
+        </div>
+    </div>
+
+</body>
+</html>

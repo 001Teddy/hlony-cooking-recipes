@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HLONY'S COOKING RECIPES</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-image: url('Scott background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #1a2332;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar - Blue Theme */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a1628 0%, #15355a 50%, #1a3d6e 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #5b9bd5;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .active {
+            background-color: #2d5f8a;
+            color: white;
+            border-bottom: 3px solid #7ab8e8;
+        }
+
+        /* Main Content Container */
+        .content-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Chef Profile Section */
+        .chef-profile {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: linear-gradient(135deg, #0a1628 0%, #15355a 50%, #1a3d6e 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 20, 50, 0.3);
+            flex-wrap: wrap;
+        }
+
+        .chef-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #5b9bd5;
+            box-shadow: 0 0 20px rgba(91, 155, 213, 0.5);
+            object-fit: cover;
+            background: #1a3d6e;
+        }
+
+        .chef-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .chef-info h2 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .chef-info .title {
+            font-size: 1.1rem;
+            color: #b8d4ff;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .chef-info .bio {
+            font-size: 1rem;
+            color: #e0ecff;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .chef-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .badge i {
+            margin-right: 5px;
+            color: #7ab8e8;
+        }
+
+        /* Header Section */
+        h1 {
+            color: #0a1628;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #2d5f8a;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .image-gallery img {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 20, 50, 0.2);
+            transition: transform 0.3s ease;
+            border: 3px solid #cfe0ff;
+            object-fit: cover;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            border-color: #2d5f8a;
+        }
+
+        /* Description Text */
+        .description {
+            font-size: 1.3rem;
+            color: #1a3555;
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px;
+            background: linear-gradient(90deg, #e8f0ff 0%, #f5f8ff 100%);
+            border-radius: 12px;
+            border-left: 5px solid #2d5f8a;
+        }
+
+        /* Link Button */
+        .food-link {
+            display: block;
+            text-align: center;
+            margin: 25px auto;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #1a3d6e, #2d5f8a);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            max-width: 300px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 30, 60, 0.3);
+        }
+
+        .food-link:hover {
+            background: linear-gradient(135deg, #2d5f8a, #5b9bd5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 30, 60, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid #cfe0ff;
+            color: #3d546f;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 700px) {
+            li {
+                float: none;
+            }
+            
+            li a {
+                text-align: left;
+                padding: 12px 16px;
+            }
+            
+            .content-container {
+                margin: 15px;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .chef-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .chef-badges {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="Italian foods.html">Italian Foods</a></li>
+        <li><a href="Salads.html">Salads</a></li>
+        <li><a href="Cookies.html">Cookies</a></li>
+        <li><a href="Bakes.html">Bakes</a></li>
+        <li><a href="Contacts.html">Contacts</a></li>
+    </ul>
+
+    <!-- Main Content -->
+    <div class="content-container">
+        
+        <!-- Chef Profile Section -->
+        <div class="chef-profile">
+            <!-- REPLACE THIS WITH CHEF MAHLONY'S ACTUAL PHOTO -->
+            <!-- Change src="chef-mahlony.jpg" to your client's photo filename -->
+            <img src="chef-mahlony.jpeg" alt="Chef Mahlony" class="chef-photo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<div class=\'chef-photo\' style=\'display:flex; align-items:center; justify-content:center; font-size:4rem;\'>👨‍🍳</div>');">
+            
+            <div class="chef-info">
+                <h2>Chef Mahlony</h2>
+                <div class="title">👨‍🍳 Private Chef & Recipe Creator | Maseru, Lesotho</div>
+                <div class="bio">
+                    Welcome to Hlony's Cooking Recipes! I'm Chef Mahlony, a passionate private chef based in Maseru, Lesotho. I specialize in creating delicious, approachable recipes that bring joy to every table. From traditional favorites to modern creations, each dish is crafted with love and expertise. Available for private dining, events, and all special occasions.
+                </div>
+                <div class="chef-badges">
+                    <span class="badge"><i>📍</i> Maseru, Lesotho</span>
+                    <span class="badge"><i>🍽️</i> Private Dining</span>
+                    <span class="badge"><i>📅</i> Available for Bookings</span>
+                    <!--<span class="badge"><i>⭐</i> Premium Service</span>-->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Header -->
+        <h1><center>IF IT LOOKS APPETIZING WHY NOT TRY IT!</center></h1>
+        
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <img src="macaroni-salad.jpeg" width="200" height="200" alt="Macaroni salad Dish" border="0">
+            <img src="meat-balls.jpeg" width="200" height="200" alt="meatballs Dish" border="0">
+            <img src="caramel-cake.jpeg" width="200" height="200" alt="Caramel cake" border="0">
+        </div>
+        
+        <!-- Description -->
+        <div class="description">
+            <p>Hlony's cooking recipes offers different kinds of food recipes which one would like to try and enjoy during different occasions. From traditional favorites to modern twists, each recipe is crafted with passion and precision by Chef Mahlony.</p>
+        </div>
+        
+        <!-- Link to Recipes -->
+        <a href="Salads.html" class="food-link">🍽️ Explore Food Recipes →</a>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Hlony's Cooking Recipes by Chef Mahlony | Maseru, Lesotho</p>
+        </div>
+    </div>
+
+</body>
+</html>
