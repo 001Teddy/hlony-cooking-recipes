@@ -11,15 +11,11 @@
 
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
-            background-image: url('Scott background.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
+            background-color: #f0f4ff;
             color: #1a2332;
             line-height: 1.6;
         }
 
-        /* Navigation Bar - Blue Theme */
         .navbar {
             list-style-type: none;
             margin: 0;
@@ -45,13 +41,11 @@
             font-weight: bold;
             font-size: 1rem;
             transition: all 0.3s ease;
-            letter-spacing: 0.5px;
         }
 
         .navbar li a:hover:not(.active) {
             background-color: #5b9bd5;
             color: #ffffff;
-            transform: translateY(-2px);
         }
 
         .navbar .active {
@@ -60,18 +54,15 @@
             border-bottom: 3px solid #7ab8e8;
         }
 
-        /* Main Content Container */
         .content-container {
             max-width: 1000px;
             margin: 30px auto;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        /* Page Header */
         .page-header {
             background: linear-gradient(135deg, #0a1628 0%, #15355a 50%, #1a3d6e 100%);
             color: white;
@@ -79,7 +70,6 @@
             padding: 20px;
             border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0, 20, 50, 0.2);
         }
 
         .page-header h1 {
@@ -88,7 +78,6 @@
             margin: 0;
         }
 
-        /* Recipe Card */
         .recipe-card {
             background: white;
             border-radius: 20px;
@@ -96,12 +85,6 @@
             margin-bottom: 30px;
             box-shadow: 0 8px 20px rgba(0, 20, 50, 0.08);
             border: 1px solid #e8f0ff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .recipe-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 20, 50, 0.15);
         }
 
         .recipe-card h2, .recipe-card h3, .recipe-card h4 {
@@ -110,25 +93,6 @@
             margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 3px solid #2d5f8a;
-        }
-
-        .recipe-card h6 {
-            color: #1a3d6e;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .recipe-image {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .recipe-image img {
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 20, 50, 0.2);
-            border: 3px solid #cfe0ff;
-            max-width: 100%;
-            height: auto;
         }
 
         .ingredients-section {
@@ -181,10 +145,8 @@
 
         .back-link:hover {
             background: linear-gradient(135deg, #2d5f8a, #5b9bd5);
-            transform: translateX(-5px);
         }
 
-        /* Footer */
         .footer {
             text-align: center;
             margin-top: 25px;
@@ -194,7 +156,6 @@
             font-style: italic;
         }
 
-        /* Responsive Design */
         @media (max-width: 700px) {
             .navbar li {
                 float: none;
@@ -218,7 +179,6 @@
 </head>
 <body>
 
-    <!-- Navigation Menu -->
     <ul class="navbar">
         <li><a href="index.html">Home</a></li>
         <li><a href="Italian foods.html">Italian Foods</a></li>
@@ -228,21 +188,14 @@
         <li><a href="Contacts.html">Contacts</a></li>
     </ul>
 
-    <!-- Main Content -->
     <div class="content-container">
         
-        <!-- Page Header -->
         <div class="page-header">
             <h1>🍪 DESSERT</h1>
         </div>
 
-        <!-- Recipe 1: Mug Cake -->
         <div class="recipe-card">
             <h2>🍫 Mug Cake</h2>
-            
-            <div class="recipe-image">
-                <img src="Mugchocolate.JPG" width="300" height="200" alt="Mug Cake">
-            </div>
             
             <div class="ingredients-section">
                 <h3>Ingredients</h3>
@@ -272,13 +225,8 @@
             </div>
         </div>
 
-        <!-- Recipe 2: Rice Krispies -->
         <div class="recipe-card">
             <h4>🍚 Rice Krispies</h4>
-            
-            <div class="recipe-image">
-                <img src="Ricenton.JPG" width="300" height="200" alt="Rice Krispies">
-            </div>
             
             <div class="ingredients-section">
                 <h6>Ingredients</h6>
@@ -301,13 +249,8 @@
             </div>
         </div>
 
-        <!-- Recipe 3: Chocolate-Dipped Strawberries -->
         <div class="recipe-card">
             <h3>🍓 Chocolate-Dipped Strawberries</h3>
-            
-            <div class="recipe-image">
-                <img src="Strawberries.JPG" width="300" height="200" alt="Chocolate-Dipped Strawberries">
-            </div>
             
             <div class="ingredients-section">
                 <h3>Ingredients</h3>
@@ -328,12 +271,10 @@
             </div>
         </div>
 
-        <!-- Navigation Link to Homepage -->
         <center>
             <a href="index.html" class="back-link">🏠 Back to Homepage</a>
         </center>
         
-        <!-- Footer -->
         <div class="footer">
             <p>© 2026 Hlony's Cooking Recipes by Chef Mahlony | Maseru, Lesotho</p>
         </div>
