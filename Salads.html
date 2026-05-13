@@ -11,15 +11,11 @@
 
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
-            background-image: url('Scott background.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
+            background-color: #f0f4ff;
             color: #1a2332;
             line-height: 1.6;
         }
 
-        /* Navigation Bar - Blue Theme */
         .navbar {
             list-style-type: none;
             margin: 0;
@@ -45,13 +41,11 @@
             font-weight: bold;
             font-size: 1rem;
             transition: all 0.3s ease;
-            letter-spacing: 0.5px;
         }
 
         .navbar li a:hover:not(.active) {
             background-color: #5b9bd5;
             color: #ffffff;
-            transform: translateY(-2px);
         }
 
         .navbar .active {
@@ -60,18 +54,15 @@
             border-bottom: 3px solid #7ab8e8;
         }
 
-        /* Main Content Container */
         .content-container {
             max-width: 1000px;
             margin: 30px auto;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        /* Page Header */
         .page-header {
             background: linear-gradient(135deg, #0a1628 0%, #15355a 50%, #1a3d6e 100%);
             color: white;
@@ -79,7 +70,6 @@
             padding: 20px;
             border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0, 20, 50, 0.2);
         }
 
         .page-header h1 {
@@ -88,7 +78,6 @@
             margin: 0;
         }
 
-        /* Recipe Card */
         .recipe-card {
             background: white;
             border-radius: 20px;
@@ -96,12 +85,6 @@
             margin-bottom: 30px;
             box-shadow: 0 8px 20px rgba(0, 20, 50, 0.08);
             border: 1px solid #e8f0ff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .recipe-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 20, 50, 0.15);
         }
 
         .recipe-card h2, .recipe-card h4, .recipe-card h5 {
@@ -170,15 +153,12 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 25px;
-            transition: all 0.3s ease;
         }
 
         .back-link:hover {
             background: linear-gradient(135deg, #2d5f8a, #5b9bd5);
-            transform: translateX(-5px);
         }
 
-        /* Footer */
         .footer {
             text-align: center;
             margin-top: 25px;
@@ -188,22 +168,18 @@
             font-style: italic;
         }
 
-        /* Responsive Design */
         @media (max-width: 700px) {
             .navbar li {
                 float: none;
             }
-            
             .navbar li a {
                 text-align: left;
                 padding: 12px 16px;
             }
-            
             .content-container {
                 margin: 15px;
                 padding: 20px;
             }
-            
             .page-header h1 {
                 font-size: 1.8rem;
             }
@@ -212,7 +188,6 @@
 </head>
 <body>
 
-    <!-- Navigation Menu -->
     <ul class="navbar">
         <li><a href="index.html">Home</a></li>
         <li><a href="Italian foods.html">Italian Foods</a></li>
@@ -220,13 +195,10 @@
         <li><a href="Cookies.html">Cookies</a></li>
         <li><a href="Bakes.html">Bakes</a></li>
         <li><a href="Contacts.html">Contacts</a></li>
-     
     </ul>
 
-    <!-- Main Content -->
     <div class="content-container">
         
-        <!-- Page Header -->
         <div class="page-header">
             <h1>🥗 SALADS</h1>
         </div>
@@ -234,11 +206,9 @@
         <!-- Recipe 1: Potato Salad -->
         <div class="recipe-card">
             <h2>Potato Salad</h2>
-            
             <div class="recipe-image">
-				<img src="https://001teddy.github.io/hlony-cooking-recipes/POTATO.jpg" width="300" height="200" alt="Potato Salad">
+                <img src="https://001teddy.github.io/hlony-cooking-recipes/POTATO.jpg" width="300" height="200" alt="Potato Salad">
             </div>
-            
             <div class="ingredients-section">
                 <h3>Ingredients</h3>
                 <p>
@@ -253,7 +223,6 @@
                     Fresh parsley and paprika for garnish
                 </p>
             </div>
-            
             <div class="procedures-section">
                 <h3>Procedures</h3>
                 <p>
@@ -270,11 +239,9 @@
         <!-- Recipe 2: Classic Potato Salad -->
         <div class="recipe-card">
             <h4>Classic Potato Salad</h4>
-            
             <div class="recipe-image">
-                <img src="classic-potato-salad.jpg" width="300" height="200" alt="Classic Potato Salad">
+                <img src="https://001teddy.github.io/hlony-cooking-recipes/classic%20potato%20salad.jpg" width="300" height="200" alt="Classic Potato Salad">
             </div>
-            
             <div class="ingredients-section">
                 <h5>Ingredients</h5>
                 <p>
@@ -286,7 +253,6 @@
                     2 tablespoons fresh parsley, chopped
                 </p>
             </div>
-            
             <div class="procedures-section">
                 <h6>Procedures</h6>
                 <p>
@@ -299,14 +265,13 @@
             </div>
         </div>
 
-        <!-- Recipe 3: Mediterranean Salad -->
-       <!-- <div class="recipe-card">
+        <!-- Recipe 3: Mediterranean Salad (COMMENTED OUT) -->
+        <!--
+        <div class="recipe-card">
             <h5>Mediterranean Salad</h5>
-            
             <div class="recipe-image">
-                <img src="greensalad3.JPG" width="300" height="200" alt="Mediterranean Salad">
+                <img src="https://001teddy.github.io/hlony-cooking-recipes/Mediterranean%20salad.jpg" width="300" height="200" alt="Mediterranean Salad">
             </div>
-            
             <div class="ingredients-section">
                 <h6>Ingredients</h6>
                 <p>
@@ -322,7 +287,6 @@
                     Fresh parsley for garnish (optional)
                 </p>
             </div>
-            
             <div class="procedures-section">
                 <h6>Procedures</h6>
                 <p>
@@ -334,16 +298,14 @@
                 </p>
             </div>
         </div>
-		-->
+        -->
 
         <!-- Recipe 4: Avocado Salad -->
         <div class="recipe-card">
             <h5>Avocado Salad</h5>
-            
             <div class="recipe-image">
-                <img src="greensalad3.jpg" width="300" height="200" alt="Avocado Salad">
+                <img src="https://001teddy.github.io/hlony-cooking-recipes/green%20salad3.jpg" width="300" height="200" alt="Avocado Salad">
             </div>
-            
             <div class="ingredients-section">
                 <h6>Ingredients</h6>
                 <p>
@@ -353,7 +315,6 @@
                     1 avocado, sliced<br>
                     1 tablespoon sunflower seeds (optional for crunch)
                 </p>
-                
                 <h6>Dressing</h6>
                 <p>
                     2 tablespoons olive oil<br>
@@ -361,7 +322,6 @@
                     Salt and pepper to taste
                 </p>
             </div>
-            
             <div class="procedures-section">
                 <h6>Procedures</h6>
                 <p>
@@ -377,11 +337,9 @@
         <!-- Recipe 5: Tomato Salad -->
         <div class="recipe-card">
             <h5>Tomato Salad</h5>
-            
             <div class="recipe-image">
-                <img src="tomatosalad.jpg" width="300" height="200" alt="Tomato Salad">
+                <img src="https://001teddy.github.io/hlony-cooking-recipes/tomato%20salad.jpg" width="300" height="200" alt="Tomato Salad">
             </div>
-            
             <div class="ingredients-section">
                 <h6>Ingredients</h6>
                 <p>
@@ -397,12 +355,10 @@
             </div>
         </div>
 
-        <!-- Navigation Link to Homepage -->
         <center>
             <a href="index.html" class="back-link">🏠 Back to Homepage</a>
         </center>
         
-        <!-- Footer -->
         <div class="footer">
             <p>© 2026 Hlony's Cooking Recipes by Chef Mahlony | Maseru, Lesotho</p>
         </div>
